@@ -50,6 +50,7 @@
 
     <button @click="showCodeModal = true">{{ $t("form.codebutton") }}</button>
     <button type="reset" @click="$store.commit(`resetGrid`)">{{ $t("form.reset") }}</button>
+    <button type="reset" class="share" title="Copiar url deste grid"><div class="share__charref" >&larrhk;</div></button>
     <app-modal v-if="showCodeModal" @close="showCodeModal = false">
       <h3 slot="header">{{ $t("modal.header.yourcode") }}</h3>
       <div slot="body">
@@ -126,6 +127,15 @@ aside {
   cursor: pointer;
 }
 
+.share {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-left: 10px;
+  &__charref{
+    transform: rotate(180deg);
+  }
+}
+
 @media screen and (max-width: 700px) {
   aside {
     width: 80vw;
@@ -136,3 +146,4 @@ aside {
   }
 }
 </style>
+
